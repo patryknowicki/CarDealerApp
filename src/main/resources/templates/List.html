@@ -3,13 +3,31 @@
 <head lang="pl">
     <head>
         <meta charset="UTF-8">
-        <title>Car list</title>
+        <title>Cars on list</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     </head>
 <body>
-Existed cars on list
-<span th:text=${car}>...</span><br>
+<p align="center"> <h2>Książka telefoniczna</h2></p> <br>
+<table  class="table table-striped">
+    <tr>
+        <th>Mark</th><th>Model</th>
+        <th>Engine Type</th>
+        <th>Capacity</th>
+        <th>Production date</th>
+        <th>Key number</th>
+        <th>Addictives</th>
+    </tr>
+
+    <tr  th:each="wpis: ${car}">
+        <td th:text="${wpis.mark}">Mark</td>
+        <td th:text="${wpis.carModel}">Model</td>
+        <td th:text="${wpis.engineType}">Engine type</td>
+        <td th:text="${wpis.capacity}">Capacity</td>
+        <td th:text="${wpis.productionDate}">Production date</td>
+        <td th:text="${wpis.keyNumber}">Key number</td>
+        <td th:text="${wpis.addictives}">Addictives</td>
+    </tr>
+</table>
 </body>
 </html>

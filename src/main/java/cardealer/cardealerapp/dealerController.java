@@ -32,7 +32,7 @@ public class dealerController {
         System.out.println(car);
         carRepo.save(car);
         model.addAttribute("car", car);
-        return "View";
+        return "List";
     }
     @RequestMapping("/list")
     public String list(Model model){
