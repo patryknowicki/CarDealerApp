@@ -13,6 +13,10 @@ public class dealerController {
     public dealerController(carRepo carRepo){
         this.carRepo = carRepo;
     }
+    @RequestMapping("/")
+    public String homePage(){
+        return "Add";
+    }
     @RequestMapping("/add")
     public String addCar(
             @RequestParam("mark") String mark,
@@ -29,5 +33,14 @@ public class dealerController {
         carRepo.save(car);
         model.addAttribute("car", car);
         return "View";
+    }
+    @RequestMapping("/list")
+    public String list(Model model){
+        int i = 0;
+        for(Car car : carRepo.findAll()){
+            System.out.println(car);
+        }
+        model.addAttribute("car", carRepo.findAll());
+        return "List";
     }
 }
