@@ -32,7 +32,7 @@ public class dealerController {
         System.out.println(car);
         carRepo.save(car);
         model.addAttribute("car", car);
-        return "List";
+        return "Add";
     }
     @RequestMapping("/list")
     public String list(Model model){
@@ -82,7 +82,7 @@ public class dealerController {
             throws Exception {
         System.out.println(carRepo.findById(id));
         model.addAttribute("car", carRepo.findById(id));
-        return "List";
+        return "Update";
     }
 
 
