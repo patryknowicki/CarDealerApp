@@ -31,6 +31,18 @@ public class Car {
         this.addictives = addictives;
         this.isNew = isNew;
     }
+    public Car(Integer id,String mark, String carModel, String engineType, String capacity,
+               String productionDate, String keyNumber, String addictives, boolean isNew){
+        this.id = id;
+        this.mark = mark;
+        this.carModel = carModel;
+        this.engineType = engineType;
+        this.capacity = capacity;
+        this.productionDate = productionDate;
+        this.keyNumber = keyNumber;
+        this.addictives = addictives;
+        this.isNew = isNew;
+    }
 
     public Car() {
     }

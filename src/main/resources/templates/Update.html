@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Aktualizuj</title>
+    </head>
+<body>
+<form th:action="@{/update}" th:object="${car}">
+    <table>
+        <tr>
+            <td>Mark</td>
+            <td><input name="mark" th:field="*{mark}"></td>
+        </tr>
+        <tr>
+            <td>Model</td>
+            <td><input name="carModel" th:field="*{carModel}"></td>
+        </tr>
+        <tr>
+            <td>Engine type</td>
+            <td><input name="engineType" th:field="*{engineType}"></td>
+        </tr>
+        <tr>
+            <td>Capacity</td>
+            <td><input name="capacity" th:field="*{capacity}"></td>
+        </tr>
+        <tr>
+            <td>Production date</td>
+            <td><input name="productionDate" th:field="*{productionDate}"></td>
+        </tr>
+        <tr>
+            <td>Key number</td>
+            <td><input name="keyNumber" th:field="*{keyNumber}"></td>
+        </tr>
+        <tr>
+            <td>Addictives</td>
+            <td><input name="addictives" th:field="*{addictives}">
+            <input type="hidden" name="id" th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

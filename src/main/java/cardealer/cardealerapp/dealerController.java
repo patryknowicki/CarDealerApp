@@ -50,6 +50,40 @@ public class dealerController {
         model.addAttribute("car", carRepo.findAll());
         return "List";
     }
-}
+    @RequestMapping("/search")
+    public String searching(@RequestParam("criterion") String criterion, Model model){
+        model.addAttribute("car", carRepo.findAllBymark(criterion));
+        return "List";
+    }
 
-// dodaj w html th delete
+    @RequestMapping("/update")
+    public String update(
+            @RequestParam("id") Integer id,
+            @RequestParam("mark") String mark,
+            @RequestParam("carModel") String carModel,
+            @RequestParam("engineType") String engineType,
+            @RequestParam("capacity") String capacity,
+            @RequestParam("productionDate") String productionDate,
+            @RequestParam("keyNumber") String keyNumber,
+            @RequestParam("addictives") String addictives,
+            Model model)
+            throws Exception {
+                Car car = new Car(mark, carModel, engineType, capacity, productionDate, keyNumber, addictives, true);
+        System.out.println(car);
+        carRepo.save(car);
+        model.addAttribute("car", car);
+        return "List";
+    }
+
+    @RequestMapping("/redirect")
+    public String redirecting(
+            @RequestParam("id") Integer id, Model model
+    )
+            throws Exception {
+        System.out.println(carRepo.findById(id));
+        model.addAttribute("car", carRepo.findById(id));
+        return "List";
+    }
+
+
+}
