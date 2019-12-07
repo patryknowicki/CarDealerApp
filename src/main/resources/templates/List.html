@@ -28,7 +28,13 @@
         <td th:text="${wpis.productionDate}">Production date</td>
         <td th:text="${wpis.keyNumber}">Key number</td>
         <td th:text="${wpis.addictives}">Addictives</td>
+
+        <td>
+            <a href="#" th:href="@{/delete(id=${wpis.id})}" class="btn btn-danger">
+
+                <i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
     </tr>
+
 
 
 
