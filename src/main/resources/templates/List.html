@@ -17,6 +17,7 @@
         <th>Production date</th>
         <th>Key number</th>
         <th>Addictives</th>
+        <th>Delete</th>
     </tr>
 
     <tr  th:each="wpis: ${car}">
@@ -28,6 +29,9 @@
         <td th:text="${wpis.keyNumber}">Key number</td>
         <td th:text="${wpis.addictives}">Addictives</td>
     </tr>
+
+
+
 </table>
 </body>
 </html>
