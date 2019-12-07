@@ -43,4 +43,13 @@ public class dealerController {
         model.addAttribute("car", carRepo.findAll());
         return "List";
     }
+    @RequestMapping("/delete")
+    public String deleting(@RequestParam("id") Integer id, Model model){
+        carRepo.deleteById(id);
+
+        model.addAttribute("car", carRepo.findAll());
+        return "List";
+    }
 }
+
+// dodaj w html th delete
