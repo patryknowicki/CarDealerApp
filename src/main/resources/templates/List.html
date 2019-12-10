@@ -17,8 +17,8 @@
         <th>Production date</th>
         <th>Key number</th>
         <th>Addictives</th>
-        <th>Delete</th>
         <th>Update</th>
+        <th>Delete</th>
     </tr>
 
     <tr  th:each="wpis: ${car}">
@@ -30,15 +30,15 @@
         <td th:text="${wpis.keyNumber}">Key number</td>
         <td th:text="${wpis.addictives}">Addictives</td>
 
-        <td>
-            <a href="#" th:href="@{/delete(id=${wpis.id})}" class="btn btn-danger">
-
-                <i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
-
 
         <td>
             <a href="#" th:href="@{/redirect(id=${wpis.id})}" class="btn btn-outline-primary"></i>Update</a>
         </td>
+
+        <td>
+            <a href="#" th:href="@{/delete(id=${wpis.id})}" class="btn btn-danger">
+
+                <i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
 
     </tr>
 

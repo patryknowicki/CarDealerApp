@@ -15,6 +15,7 @@ public class dealerController {
     public String homePage(){
         return "Home";
     }
+
     @RequestMapping("/add")
     public String addCar(
             @RequestParam(required = false) String mark,
