@@ -10,27 +10,27 @@
    <table>
        <tr>
            <td>Mark:</td>
-           <td><input name="mark"></td>
+           <td><input name="mark" required></td>
        </tr>
        <tr>
            <td>Model:</td>
-           <td> <input name="carModel"> </td>
+           <td> <input name="carModel" required> </td>
        </tr>
        <tr>
            <td>Engine type:</td>
-           <td><input name="engineType"></td>
+           <td><input name="engineType" required></td>
        </tr>
        <tr>
            <td>Capacity:</td>
-           <td><input name="capacity"></td>
+           <td><input name="capacity" required></td>
        </tr>
        <tr>
            <td>Production date:</td>
-           <td><input name="productionDate"></td>
+           <td><input name="productionDate" required></td>
        </tr>
        <tr>
            <td>Key number:</td>
-           <td><input name="keyNumber"></td>
+           <td><input name="keyNumber" required></td>
        </tr>
        <tr>
            <td>Addictives</td>
@@ -41,6 +41,7 @@
    <input type="submit"></td>
    </table>
 </form>
+<input type="button" value="Car list" onclick="window.location.href='http://localhost:8080/list'">
 </body>
 </html>
 

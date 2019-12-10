@@ -6,31 +6,31 @@
         <title>Aktualizuj</title>
     </head>
 <body>
-<form th:action="@{/update}" th:object="${car}">
+<form th:action="@{/update}"  th:object="${car}">
     <table>
         <tr>
             <td>Mark</td>
-            <td><input name="mark" th:field="*{mark}"></td>
+            <td><input name="mark" th:field="*{mark}" required></td>
         </tr>
         <tr>
             <td>Model</td>
-            <td><input name="carModel" th:field="*{carModel}"></td>
+            <td><input name="carModel" th:field="*{carModel} " required></td>
         </tr>
         <tr>
             <td>Engine type</td>
-            <td><input name="engineType" th:field="*{engineType}"></td>
+            <td><input name="engineType" th:field="*{engineType}" required></td>
         </tr>
         <tr>
             <td>Capacity</td>
-            <td><input name="capacity" th:field="*{capacity}"></td>
+            <td><input name="capacity" th:field="*{capacity}" required></td>
         </tr>
         <tr>
             <td>Production date</td>
-            <td><input name="productionDate" th:field="*{productionDate}"></td>
+            <td><input name="productionDate" th:field="*{productionDate}" required></td>
         </tr>
         <tr>
             <td>Key number</td>
-            <td><input name="keyNumber" th:field="*{keyNumber}"></td>
+            <td><input name="keyNumber" th:field="*{keyNumber}" required></td>
         </tr>
         <tr>
             <td>Addictives</td>
@@ -42,5 +42,6 @@
         </tr>
     </table>
 </form>
+<input type="button" value="Car list" onclick="window.location.href='http://localhost:8080/list'">
 </body>
 </html>

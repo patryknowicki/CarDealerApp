@@ -15,25 +15,27 @@ public class dealerController {
     }
     @RequestMapping("/")
     public String homePage(){
-        return "Add";
+        return "Home";
     }
     @RequestMapping("/add")
     public String addCar(
-            @RequestParam("mark") String mark,
-            @RequestParam("carModel") String carModel,
-            @RequestParam("engineType") String engineType,
-            @RequestParam("capacity") String capacity,
-            @RequestParam("productionDate") String productionDate,
-            @RequestParam("keyNumber") String keyNumber,
-            @RequestParam("addictives") String addictives,
+            @RequestParam(required = false) String mark,
+            @RequestParam(required = false) String carModel,
+            @RequestParam(required = false) String engineType,
+            @RequestParam(required = false) String capacity,
+            @RequestParam(required = false) String productionDate,
+            @RequestParam(required = false) String keyNumber,
+            @RequestParam(required = false) String addictives,
             Model model)
         throws Exception{
         Car car = new Car(mark, carModel, engineType, capacity, productionDate, keyNumber, addictives, true);
         System.out.println(car);
+        if(car.getMark()!=null)
         carRepo.save(car);
         model.addAttribute("car", car);
         return "Add";
     }
+
     @RequestMapping("/list")
     public String list(Model model){
         int i = 0;
@@ -68,10 +70,10 @@ public class dealerController {
             @RequestParam("addictives") String addictives,
             Model model)
             throws Exception {
-                Car car = new Car(mark, carModel, engineType, capacity, productionDate, keyNumber, addictives, true);
+                Car car = new Car(id, mark, carModel, engineType, capacity, productionDate, keyNumber, addictives, true);
         System.out.println(car);
         carRepo.save(car);
-        model.addAttribute("car", car);
+        model.addAttribute("car", carRepo.findAll());
         return "List";
     }
 
