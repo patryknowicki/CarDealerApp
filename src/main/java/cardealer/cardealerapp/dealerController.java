@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class dealerController {
     private carRepo carRepo;
     @Autowired
-    public dealerController(carRepo carRepo){
-        this.carRepo = carRepo;
-    }
+    public dealerController(carRepo carRepo){ this.carRepo = carRepo; }
     @RequestMapping("/")
     public String homePage(){
         return "Home";
@@ -87,5 +85,36 @@ public class dealerController {
         return "Update";
     }
 
+@Controller
+    public class motorController{
+        private motorcycleRepo motorcycleRepo;
+        @Autowired
+    public motorController(motorcycleRepo motorcycleRepo) { this.motorcycleRepo = motorcycleRepo; }
+
+    @RequestMapping("/addmoto")
+    public String addMoto(
+            @RequestParam(required = false) String mark,
+            @RequestParam(required = false) String motorcycleModel,
+            @RequestParam(required = false) String version,
+            @RequestParam(required = false) String destiny,
+            @RequestParam(required = false) String engineType,
+            @RequestParam(required = false) String capacity,
+            @RequestParam(required = false) String engineOperationStrokes,
+            @RequestParam(required = false) String productionDate,
+            @RequestParam(required = false) String license,
+            @RequestParam(required = false) String keyNumber,
+            @RequestParam(required = false) String addictives,
+            Model model)
+        throws Exception{
+            Motorcycle motorcycle = new Motorcycle(mark, motorcycleModel, version, destiny, engineType, capacity,
+                    engineOperationStrokes, productionDate, license, keyNumber, addictives, true);
+        System.out.println(motorcycle);
+        if(motorcycle.getMark()!=null)
+            motorcycleRepo.save(motorcycle);
+        model.addAttribute("motorcycle", motorcycle);
+        return "AddMoto";
+        }
+
+    }
 
 }

@@ -1,0 +1,8 @@
+2019-12-10 18:51:46 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "SELECT * FORM[*] MOTORCYCLE"
+Syntax error in SQL statement "SELECT * FORM[*] MOTORCYCLE"; SQL statement:
+SELECT * FORM MOTORCYCLE [42000-200]
+2019-12-10 18:51:47 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "SELECT * FORM[*] MOTORCYCLE"
+Syntax error in SQL statement "SELECT * FORM[*] MOTORCYCLE"; SQL statement:
+SELECT * FORM MOTORCYCLE [42000-200]

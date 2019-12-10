@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cars on list</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+<body>
+<p align="center"> <h2>Motorcycles in base</h2></p> <br>
+<table  class="table table-striped">
+    <tr>
+        <th>Mark</th><th>Model</th>
+        <th>Engine Type</th>
+        <th>Capacity</th>
+        <th>Production date</th>
+        <th>Key number</th>
+        <th>Addictives</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+    <tr  th:each="wpis: ${motorcycle}">
+        <td th:text="${wpis.mark}">Mark</td>
+        <td th:text="${wpis.motorcycleModel}">Model</td>
+        <td th:text="${wpis.version}">Version</td>
+        <td th:text="${wpis.destiny}">Destiny</td>
+        <td th:text="${wpis.engineType}">Engine type</td>
+        <td th:text="${wpis.capacity}">Capacity</td>
+        <td th:text="${wpis.engineOperationStrokes}">Engine operation strokes</td>
+        <td th:text="${wpis.productionDate}">Production date</td>
+        <td th:text="${wpis.license}">License</td>
+        <td th:text="${wpis.keyNumber}">Key number</td>
+        <td th:text="${wpis.addictives}">Addictives</td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <input type="submit"></td>
+</table>
+</form>
+</body>
+</html>

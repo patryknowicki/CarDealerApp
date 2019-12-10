@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding new motorcycle to list</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<form action="http://localhost:8080/addmoto">
+    <table>
+        <tr>
+            <td>Mark:</td>
+            <td><input name="mark" required></td>
+        </tr>
+        <tr>
+            <td>Model:</td>
+            <td><input name="motorcycleModel" required> </td>
+        </tr>
+        <tr>
+            <td>Version(Serial/Custom)</td>
+            <td><input name="version" required></td>
+        </tr>
+        <tr>
+            <td>Motorcycle destiny:</td>
+            <td><input name="destiny" required></td>
+        </tr>
+        <tr>
+            <td>Engine type:</td>
+            <td><input name="engineType" required></td>
+        </tr>
+        <tr>
+            <td>Capacity:</td>
+            <td><input name="capacity" required></td>
+        </tr>
+        <tr>
+            <td>Engine operation strokes:</td>
+            <td><input name="engineOperationStrokes" required></td>
+        </tr>
+        <tr>
+            <td>Production date:</td>
+            <td><input name="productionDate" required></td>
+        </tr>
+        <tr>
+            <td>Drive license:</td>
+            <td><input name="license" required></td>
+        </tr>
+        <tr>
+            <td>Key number:</td>
+            <td><input name="keyNumber" required></td>
+        </tr>
+        <tr>
+            <td>Addictives</td>
+            <td><input name="addictives"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit"></td>
+    </table>
+</form>
+<input type="button" value="Motorcycle list" onclick="window.location.href='http://localhost:8080/listmoto'">
+</body>
+</html>
+
