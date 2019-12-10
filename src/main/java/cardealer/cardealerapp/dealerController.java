@@ -146,8 +146,32 @@ public class dealerController {
             throws Exception {
         System.out.println(motorcycleRepo.findById(id));
         model.addAttribute("motorcycle", motorcycleRepo.findById(id));
-        return "List";
+        return "UpdateMoto";
     }
+
+    @RequestMapping("/updatemoto")
+    public String updateMoto(
+            @RequestParam("id") Integer id,
+            @RequestParam("mark") String mark,
+            @RequestParam("motorcycleModel") String motorcycleModel,
+            @RequestParam("version") String version,
+            @RequestParam("destiny") String destiny,
+            @RequestParam("engineType") String engineType,
+            @RequestParam("capacity") String capacity,
+            @RequestParam("engineOperationStrokes") String engineOperationStrokes,
+            @RequestParam("productionDate") String productionDate,
+            @RequestParam("license") String license,
+            @RequestParam("keyNumber") String keyNumber,
+            @RequestParam("addictives") String addictives,
+            Model model)
+        throws Exception{
+        Motorcycle motorcycle = new Motorcycle(id, mark, motorcycleModel, version, destiny, engineType, capacity,
+                engineOperationStrokes, productionDate, license, keyNumber, addictives, true);
+        System.out.println(motorcycle);
+        motorcycleRepo.save(motorcycle);
+        model.addAttribute("motorcycle", motorcycle);
+        return "AddMoto";
+        }
 
 
 
