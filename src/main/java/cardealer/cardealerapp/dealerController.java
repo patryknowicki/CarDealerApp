@@ -113,7 +113,7 @@ public class dealerController {
             motorcycleRepo.save(motorcycle);
         model.addAttribute("motorcycle", motorcycle);
         return "AddMoto";
-        }
+    }
 
     @RequestMapping("/listmoto")
     public String listMoto(Model model){
@@ -124,6 +124,33 @@ public class dealerController {
         model.addAttribute("motorcycle", motorcycleRepo.findAll());
         return "ListMoto";
     }
+
+    @RequestMapping("/deletemoto")
+    public String deleting(@RequestParam("id") Integer id, Model model){
+        motorcycleRepo.deleteById(id);
+
+        model.addAttribute("motorcycle", motorcycleRepo.findAll());
+        return "ListMoto";
     }
 
+    @RequestMapping("/searchmoto")
+    public String searching(@RequestParam("criterion") String criterion, Model model){
+        model.addAttribute("motorcycle", motorcycleRepo.findAllBymark(criterion));
+        return "ListMoto";
+    }
+
+    @RequestMapping("/redirectmoto")
+    public String redirecting(
+            @RequestParam("id") Integer id, Model model
+    )
+            throws Exception {
+        System.out.println(motorcycleRepo.findById(id));
+        model.addAttribute("motorcycle", motorcycleRepo.findById(id));
+        return "List";
+    }
+
+
+
+
+    }
 }

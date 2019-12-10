@@ -11,10 +11,15 @@
 <p align="center"> <h2>Motorcycles in base</h2></p> <br>
 <table  class="table table-striped">
     <tr>
-        <th>Mark</th><th>Model</th>
+        <th>Mark</th>
+        <th>Model</th>
+        <th>Version</th>
+        <th>Destiny</th>
         <th>Engine Type</th>
         <th>Capacity</th>
+        <th>EOS</th>
         <th>Production date</th>
+        <th>License</th>
         <th>Key number</th>
         <th>Addictives</th>
         <th>Delete</th>
@@ -33,11 +38,28 @@
         <td th:text="${wpis.license}">License</td>
         <td th:text="${wpis.keyNumber}">Key number</td>
         <td th:text="${wpis.addictives}">Addictives</td>
+
+        <td>
+            <a href="#" th:href="@{/deletemoto(id=${wpis.id})}" class="btn btn-danger">
+
+                <i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
+        <td>
+            <a href="#" th:href="@{/redirectmoto(id=${wpis.id})}" class="btn btn-outline-primary"></i>Update</a>
+        </td>
+
+
     </tr>
 
     <tr>
         <td colspan="2">
             <input type="submit"></td>
+</table>
+<table class="table table-striped">
+    <tr>
+        <td>Find by mark</td>
+        <td><form action="http://localhost:8080/searchmoto"><input name="criterion"></td><td><input type="submit"></form></td>
+    </tr>
+
 </table>
 </form>
 </body>
