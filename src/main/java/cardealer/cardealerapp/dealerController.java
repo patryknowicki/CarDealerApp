@@ -115,6 +115,15 @@ public class dealerController {
         return "AddMoto";
         }
 
+    @RequestMapping("/listmoto")
+    public String listMoto(Model model){
+        int i = 0;
+        for(Motorcycle motorcycle : motorcycleRepo.findAll()){
+            System.out.println(motorcycle);
+        }
+        model.addAttribute("motorcycle", motorcycleRepo.findAll());
+        return "ListMoto";
+    }
     }
 
 }
