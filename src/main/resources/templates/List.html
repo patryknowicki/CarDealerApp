@@ -8,6 +8,46 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
 <body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navigation</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="http://localhost:8080/">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/list">Car list</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/listmoto">Motorcycle list</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Add..
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="http://localhost:8080/">Action</a>
+                    <a class="dropdown-item" href="http://localhost:8080/">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="http://localhost:8080/">Something else here</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="http://localhost:8080/search">
+
+            <input  name="criterion" class="form-control mr-sm-2" type="search" placeholder="Find by mark " aria-label="Search">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+
 <a href="#" class="btn btn-secondary btn-lg btn-block disabled" role="button" aria-disabled="true"><h2>Cars in the database</h2></a>
 <table  class="table table-striped">
     <tr>
@@ -32,33 +72,23 @@
 
 
         <td>
-            <a href="#" th:href="@{/redirect(id=${wpis.id})}" class="btn btn-outline-primary"></i>Update</a>
+            <a href="#" th:href="@{/redirect(id=${wpis.id})}" class="btn btn-outline-primary"
+               data-toggle="tooltip" data-placement="top" title="Update information"></i>Update</a>
         </td>
 
         <td>
-            <a href="#" th:href="@{/delete(id=${wpis.id})}" class="btn btn-danger">
-
-                <i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
-
+            <a href="#" th:href="@{/delete(id=${wpis.id})}" class="btn btn-danger"
+               data-toggle="tooltip" data-placement="top" title="Delete forever from the database"></i>Delete</a></td>
     </tr>
 
 
 </table>
-    <a href="#" class="btn btn-secondary btn-lg btn-block disabled" role="button" aria-disabled="true"><h2></h2></a>
 
-<table class="table table-striped">
-    <tr>
-        <td>Find car by mark</td>
-        <td><form action="http://localhost:8080/search"><input name="criterion"></td><td><input type="submit" class="btn btn-info" value="Search"></form></td>
-    </tr>
+<p align="right">
 
-</table>
-<a href="#" class="btn btn-secondary btn-lg btn-block disabled" role="button" aria-disabled="true"><h2></h2></a>
-
-<p align="center">
-    <input type="button" class="btn btn-outline-secondary" value="Back to menu" onclick="window.location.href='http://localhost:8080/'">
-    <input type="button" class="btn btn-outline-primary" value="Add car" onclick="window.location.href='http://localhost:8080/add'">
+    <input type="button" class="btn btn-primary btn-lg" value="Add new car" onclick="window.location.href='http://localhost:8080/add'">
 </p>
+<a href="#" class="btn btn-secondary btn-lg btn-block disabled" role="button" aria-disabled="true"><h2></h2></a>
 
 
 
