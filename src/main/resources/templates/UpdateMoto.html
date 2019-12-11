@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head lang="pl">
     <head>
         <meta charset="UTF-8">
         <title>Update</title>
     </head>
 <body>
-<form th:action="@{/updatemoto}"  th:object="${motorcycle}">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navigation</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="http://localhost:8080/">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/list">Car list</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/listmoto">Motorcycle list</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<form th:action="@{/updatemoto}" method="post" onreset="if (!confirm('Are you sure you want to clear the entire form?')) return false" th:object="${motorcycle}">
     <table>
+        <a href="#" class="btn btn-secondary btn-lg disabled" role="button" aria-disabled="true">Update selected motorcycle </a>
+        <tr><td></td></tr>       <tr><td></td></tr>
         <tr>
             <td>Mark</td>
             <td><input name="mark" th:field="*{mark}" required></td>
@@ -53,11 +76,13 @@
             <td><input name="addictives" th:field="*{addictives}">
                 <input type="hidden" name="id" th:field="*{id}"></td>
         </tr>
-        <tr>
-            <td colspan="2"><input type="submit"></td>
-        </tr>
+
     </table>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <input type="button" class="btn btn-dark" value="Back" onclick="window.location.href='http://localhost:8080/listmoto'">
+        <button type="button" class="btn btn-outline-dark" disabled>                       </button>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
 </form>
-<input type="button" value="Motorcycle list" onclick="window.location.href='http://localhost:8080/listmoto'">
 </body>
 </html>

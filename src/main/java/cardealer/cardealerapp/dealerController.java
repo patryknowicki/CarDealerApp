@@ -170,8 +170,8 @@ public class dealerController {
                 engineOperationStrokes, productionDate, license, keyNumber, addictives, true);
         System.out.println(motorcycle);
         motorcycleRepo.save(motorcycle);
-        model.addAttribute("motorcycle", motorcycle);
-        return "AddMoto";
+        model.addAttribute("motorcycle", motorcycleRepo.findAll());
+        return "ListMoto";
         }
 
 
