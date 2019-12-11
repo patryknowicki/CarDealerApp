@@ -7,7 +7,7 @@
         <title>Update</title>
     </head>
 <body>
-<form th:action="@{/update}"  method="post" onreset="if (!confirm('Czy na pewno chcesz wyczyścić cały formularz?')) return false" th:object="${car} ">
+<form th:action="@{/update}"  method="post" onreset="if (!confirm('Are you sure you want to clear the entire form?')) return false" th:object="${car} ">
     <table>
         <a href="#" class="btn btn-secondary btn-lg disabled" role="button" aria-disabled="true">Update selected car </a>
         <tr><td></td></tr>       <tr><td></td></tr>
