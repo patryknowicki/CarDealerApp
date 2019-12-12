@@ -11,10 +11,17 @@ public class dealerController {
     private carRepo carRepo;
     @Autowired
     public dealerController(carRepo carRepo){ this.carRepo = carRepo; }
+
+    @RequestMapping("/login")
+    public String loginForm() {
+        return "login_form";
+    }
+
     @RequestMapping("/")
     public String homePage(){
         return "Home";
     }
+
 
     @RequestMapping("/add")
     public String addCar(
