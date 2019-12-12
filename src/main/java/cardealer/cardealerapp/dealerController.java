@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class dealerController {
     private carRepo carRepo;
@@ -13,7 +15,7 @@ public class dealerController {
     public dealerController(carRepo carRepo){ this.carRepo = carRepo; }
 
     @RequestMapping("/login")
-    public String loginForm() {
+    public String loginForm(HttpServletRequest httpServletRequest) {
         return "login_form";
     }
 

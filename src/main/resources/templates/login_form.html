@@ -1,15 +1,25 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <title>Please Login</title>
+    <title>Login Page</title>
 </head>
-<body>
-<h1>Please Login</h1>
-<form action="/login" th:action="@{/login}" method="post">
-    <input name="username" placeholder="Username" /> <br />
-    <input name="password" placeholder="Password" /> <br />
-    <input type="submit" value="Login" />
+<body onload='document.f.username.focus();'>
+<h3>Login with ???????????? and Password</h3>
+<form name='f'action='${pageContext.request.contextPath}/login'method='POST'>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    <table>
+        <tr>
+            <td>User:</td>
+            <td><input type='text' name='username' value=''></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type='password' name='password' /></td>
+        </tr>
+        <tr>
+            <td colspan='2'><input name="submit" type="submit"
+                                   value="Login" /></td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>
