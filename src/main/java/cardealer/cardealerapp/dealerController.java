@@ -14,10 +14,6 @@ public class dealerController {
     @Autowired
     public dealerController(carRepo carRepo){ this.carRepo = carRepo; }
 
-    @RequestMapping("/login")
-    public String loginForm(HttpServletRequest httpServletRequest) {
-        return "login_form";
-    }
 
     @RequestMapping("/")
     public String homePage(){
