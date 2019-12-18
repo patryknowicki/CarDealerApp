@@ -42,7 +42,6 @@ public class dealerController {
 
     @RequestMapping("/list")
     public String list(Model model){
-        int i = 0;
         for(Car car : carRepo.findAll()){
             System.out.println(car);
         }
@@ -123,7 +122,6 @@ public class dealerController {
 
     @RequestMapping("/listmoto")
     public String listMoto(Model model){
-        int i = 0;
         for(Motorcycle motorcycle : motorcycleRepo.findAll()){
             System.out.println(motorcycle);
         }
