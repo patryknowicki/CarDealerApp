@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface carRepo extends JpaRepository<Car, Integer> {
     List<Car> findAllBymark(String wyszukaj);
+
 }

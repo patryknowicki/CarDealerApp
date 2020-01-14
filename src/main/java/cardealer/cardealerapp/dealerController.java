@@ -15,7 +15,7 @@ public class dealerController {
     public dealerController(carRepo carRepo){ this.carRepo = carRepo; }
 
 
-    @RequestMapping("/")
+    @RequestMapping("/home")
     public String homePage(){
         return "Home";
     }
@@ -42,7 +42,7 @@ public class dealerController {
 
     @RequestMapping("/list")
     public String list(Model model){
-        int i = 0;
+
         for(Car car : carRepo.findAll()){
             System.out.println(car);
         }
@@ -178,9 +178,27 @@ public class dealerController {
         model.addAttribute("motorcycle", motorcycleRepo.findAll());
         return "ListMoto";
         }
+    @RequestMapping("/DetailsCar")
+    public String DetailsCar(
+            @RequestParam("id") Integer id, Model model)
+    {
+        model.addAttribute("car", carRepo.findById(id));
+        System.out.println("!!!! id"+id);
+        return "DetailsCar";
+    }
+
+@RequestMapping("/DetailsMoto")
+public String detailsMoto(
+    @RequestParam("id") Integer id, Model model
+)
+{
+    System.out.println(motorcycleRepo.findById(id));
+    model.addAttribute("motorcycle",motorcycleRepo.findById(id));
+    return "DetailsMoto";
+}
+}
 
 
 
 
     }
-}
