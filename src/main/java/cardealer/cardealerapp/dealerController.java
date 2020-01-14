@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.persistence.Id;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -49,6 +50,15 @@ public class dealerController {
         model.addAttribute("car", carRepo.findAll());
         return "List";
     }
+
+    @RequestMapping("/DetailsCar")
+    public String DetailsCar(Model model,Integer id){
+                    for(Car car : carRepo.findAll()){
+        System.out.println(car);
+    }
+        model.addAttribute("car", carRepo.findById(id));
+        return "DetailsCar";
+}
     @RequestMapping("/delete")
     public String deleting(@RequestParam("id") Integer id, Model model){
         carRepo.deleteById(id);
@@ -130,6 +140,15 @@ public class dealerController {
         model.addAttribute("motorcycle", motorcycleRepo.findAll());
         return "ListMoto";
     }
+    @RequestMapping("/DetailsMoto")
+    public String detailsMoto(Model model,Integer id){
+
+        for(Motorcycle motorcycle : motorcycleRepo.findAll()){
+            System.out.println(motorcycle);
+        }
+        model.addAttribute("motorcycle", motorcycleRepo.findById(id));
+        return "DetailsMoto";
+    }
 
     @RequestMapping("/deletemoto")
     public String deleting(@RequestParam("id") Integer id, Model model){
@@ -178,24 +197,8 @@ public class dealerController {
         model.addAttribute("motorcycle", motorcycleRepo.findAll());
         return "ListMoto";
         }
-    @RequestMapping("/DetailsCar")
-    public String DetailsCar(
-            @RequestParam("id") Integer id, Model model)
-    {
-        model.addAttribute("car", carRepo.findById(id));
-        System.out.println("!!!! id"+id);
-        return "DetailsCar";
-    }
 
-@RequestMapping("/DetailsMoto")
-public String detailsMoto(
-    @RequestParam("id") Integer id, Model model
-)
-{
-    System.out.println(motorcycleRepo.findById(id));
-    model.addAttribute("motorcycle",motorcycleRepo.findById(id));
-    return "DetailsMoto";
-}
+
 }
 
 

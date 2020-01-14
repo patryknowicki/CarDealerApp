@@ -50,6 +50,7 @@
         <th>Key number</th>
         <th>Addictives</th>
         <th>Delete</th>
+        <th>Details</th>
         <th>Update</th>
     </tr>
 
@@ -70,6 +71,10 @@
             <a href="#" th:href="@{/deletemoto(id=${wpis.id})}" class="btn btn-danger">
 
                 <i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
+        <td>
+            <a href="#" th:href="@{/DetailsMoto(id=${wpis.id})}" class="btn btn-outline-primary"
+               data-toggle="tooltip" data-placement="top" title="Update information"></i>Details</a>
+        </td>
         <td>
             <a href="#" th:href="@{/redirectmoto(id=${wpis.id})}" class="btn btn-outline-primary"></i>Update</a>
         </td>
