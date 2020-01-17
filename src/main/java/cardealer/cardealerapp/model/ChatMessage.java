@@ -34,4 +34,27 @@ public class ChatMessage {
     public void setSender(String sender) {
         this.sender = sender;
     }
+
+    public String cezar(String str) {        //metoda szyfrujaca;
+        char x[] = str.toCharArray();
+
+        for (int i = 0; i != x.length; i++) {
+            int n = x[i];
+            n += 5;
+            x[i] = (char) n;
+        }
+        return new String(x);
+    }
+
+    public String cezarwroc(String str){     //metoda deszyfrujaca;
+        char x[] = str.toCharArray();
+
+        for(int i=0; i != x.length; i++) {
+            int n = x[i];
+            n -= 5;
+            x[i] = (char)n;
+        }
+        return new String(x);
+    }
+
 }

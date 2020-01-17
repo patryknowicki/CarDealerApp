@@ -6,3 +6,14 @@ SELECT * FORM MOTORCYCLE [42000-200]
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "SELECT * FORM[*] MOTORCYCLE"
 Syntax error in SQL statement "SELECT * FORM[*] MOTORCYCLE"; SQL statement:
 SELECT * FORM MOTORCYCLE [42000-200]
+2020-01-17 09:41:40 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "ID[*]"; oczekiwano "INSERT"
+Syntax error in SQL statement "ID[*]"; expected "INSERT"; SQL statement:
+ID [42001-200]
+2020-01-17 09:42:43 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "SELECT * FROM CAR_DEALER 
+SELECT[*] * FROM MOTORCYCLE"
+Syntax error in SQL statement "SELECT * FROM CAR_DEALER 
+SELECT[*] * FROM MOTORCYCLE"; SQL statement:
+SELECT * FROM CAR_DEALER 
+SELECT * FROM MOTORCYCLE [42000-200]

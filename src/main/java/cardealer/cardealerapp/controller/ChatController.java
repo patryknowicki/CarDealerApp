@@ -15,8 +15,11 @@ public class ChatController {
     @MessageMapping("/chat.sendMessage")
     @SendTo("/topic/public")
     public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
+        chatMessage.setContent(chatMessage.cezar(chatMessage.getContent()));
+        chatMessage.setContent(chatMessage.cezarwroc(chatMessage.getContent()));//deszyfrowanie wiadomosci
         return chatMessage;
     }
+
 
     @MessageMapping("/chat.addUser")
     @SendTo("/topic/public")
@@ -26,5 +29,4 @@ public class ChatController {
         headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
         return chatMessage;
     }
-
 }
